@@ -16,11 +16,11 @@ Hardware timer in the microcontroller. Can be used with [DWT_Delay](https://gith
 How to add CPM to the project, check the [link](https://github.com/cpm-cmake/CPM.cmake)
 ```cmake
 CPMAddPackage(
-        NAME TIM_Delay
-        GITHUB_REPOSITORY ximtech/TIM_Delay
+        NAME TIMDelay
+        GITHUB_REPOSITORY ximtech/TIMDelay
         GIT_TAG origin/main)
 
-target_link_libraries(${PROJECT_NAME} TIM_Delay)
+target_link_libraries(${PROJECT_NAME} TIMDelay)
 ```
 
 ### Usage
