@@ -1,9 +1,12 @@
 #pragma once
 
-#include "stm32f4xx_ll_tim.h"
-#include "stm32f4xx_ll_bus.h"
+#include "main.h"
 
+#ifndef DELAY_TIMER
 #define TIMER  TIM1
+#elif
+#define TIMER  DELAY_TIMER
+#endif
 
 void timDelayInit();
 
