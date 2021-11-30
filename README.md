@@ -20,12 +20,12 @@ CPMAddPackage(
         GITHUB_REPOSITORY ximtech/TIMDelay
         GIT_TAG origin/main)
 
-target_link_libraries(${PROJECT_NAME} TIMDelay)
+target_link_libraries(${PROJECT_NAME} TIM_Delay)
 ```
 ```cmake
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 # For Clion STM32 plugin generated Cmake use 
-target_link_libraries(${PROJECT_NAME}.elf StringUtils)
+target_link_libraries(${PROJECT_NAME}.elf TIM_Delay)
 ```
 
 ### Usage
