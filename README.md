@@ -1,6 +1,6 @@
 # TimerDelay
 STM32 LL(Low Layer) timer delay library.\
-Hardware timer in the microcontroller. Can be used with [DWT_Delay](https://github.com/ximtech/DWTDelay)
+Hardware timer in the microcontroller. Can be used with [TIM_Delay](https://github.com/ximtech/TIMDelay)
 
 ### Features
 - Ultra lightweight
@@ -9,7 +9,6 @@ Hardware timer in the microcontroller. Can be used with [DWT_Delay](https://gith
 - No HAL dependency
 
 ### Trade-offs
-- Only STM32F4 supported at this time
 - Hardware timer will be occupied
 
 ### Add as CPM project dependency
@@ -20,17 +19,13 @@ CPMAddPackage(
         GITHUB_REPOSITORY ximtech/TIMDelay
         GIT_TAG origin/main)
 
-target_link_libraries(${PROJECT_NAME} TIMDelay)
-```
-```cmake
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
-# For Clion STM32 plugin generated Cmake use 
-target_link_libraries(${PROJECT_NAME}.elf StringUtils)
+include_directories(${TIM_DELAY_DIRECTORY}) # add directory to project
+file(GLOB_RECURSE SOURCES ${TIM_DELAY_SOURCES}) # add source files
 ```
 
 ### Usage
 ```C
-#define TIMER  TIM1 // set timer in TIM_Delay.h or use default
+#define TIMER_DELAY  TIM1 // set timer in main.h or use default(TIM1)
 ```
 
 ```C
